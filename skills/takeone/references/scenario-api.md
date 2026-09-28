@@ -148,6 +148,6 @@ These work on `record`, `dry-run` and `render`:
 
 `render` saves the look settings it is given (`output`, `frame`, `cursor`, `zoom`, `idleTrim`, `keys`) in the recording's `manifest.json` as `renderConfig`. Every render applies the recorded `config`, then `renderConfig`, then its own flags, so a re-render without flags keeps the latest look. `render --reset-look` starts again from the recorded `config`.
 
-For login state from a real browser: `takeone login --url <app> -o state.json`. This needs a display, so run it on a laptop. Then set `browser.storageState: "state.json"`.
+For login state from a real browser: `takeone login --url <app> -o state.json`. This needs a display, so run it on a laptop. Log in, then press Enter or close the window (with `--profile`, only Enter works). Without a terminal, add `--wait-for-url <regex>` to save once a tab reaches a logged-in URL, and `--timeout <seconds>` to give up instead of waiting forever. Then set `browser.storageState: "state.json"`.
 
 `record`, `dry-run` and the live session load the file before any setup runs. A relative path is read from the folder takeone runs in, and a missing file is an error. With `--profile`, the file replaces the profile's cookies, and the storage of each site in the file.
