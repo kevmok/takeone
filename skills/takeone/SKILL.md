@@ -172,6 +172,8 @@ Read credentials from environment variables. Never write them into the file.
 
 A login saved with `takeone login` works too. Set `browser.storageState` in the scenario's config to the file. The session loads it before `explore.setup` runs, so the scenario needs no setup. A relative path is read from the folder takeone runs in.
 
+`session stop` keeps the session's cookies, session cookies included, so a session started again on the same profile is still logged in.
+
 `browser.colorScheme: "dark"` only sets the browser's dark-mode preference, which the page sees through `prefers-color-scheme`. If the app keeps its own theme setting, set it in the setup, as above.
 
 ## Making it look good
