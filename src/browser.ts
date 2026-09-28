@@ -72,12 +72,13 @@ export async function launchBrowser(cfg: BrowserConfig, viewport: ViewportConfig
   ensureChromium(cfg, log);
   const executablePath = resolveExecutablePath(cfg);
   const storageState = resolveStorageState(cfg);
+  // No --disable-features here: Chromium keeps only the last one, so it would replace
+  // Playwright's own list (which already includes Translate) instead of adding to it.
   const args = [
     "--disable-blink-features=AutomationControlled",
     "--hide-scrollbars",
     "--disable-smooth-scrolling",
     "--font-render-hinting=none",
-    "--disable-features=TranslateUI",
     "--autoplay-policy=no-user-gesture-required",
     ...(cfg.args ?? []),
   ];
