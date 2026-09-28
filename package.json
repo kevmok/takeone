@@ -1,6 +1,6 @@
 {
   "name": "takeone",
-  "version": "0.1.2",
+  "version": "0.1.2-fork.1",
   "description": "Scripted, agent-friendly screen recordings of web apps with Screen Studio style cursor, zoom and framing. Runs headless.",
   "type": "module",
   "license": "MIT",
@@ -44,7 +44,8 @@
     "build": "tsc -p tsconfig.json",
     "dev": "tsc -p tsconfig.json --watch",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "prepare": "npm run build"
   },
   "engines": {
     "node": ">=20"
